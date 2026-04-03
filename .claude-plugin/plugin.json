@@ -1,0 +1,9 @@
+{
+  "name": "wezterm-panes",
+  "description": "WezTermのペイン管理とClaude Code起動",
+  "version": "1.0.0",
+  "author": {
+    "name": "happy-ryo"
+  },
+  "repository": "https://github.com/happy-ryo/wezterm-panes-plugin"
+}
