@@ -65,6 +65,19 @@ Or just ask Claude Code in natural language, e.g. "open a new pane to the right 
 - **Send text/keys** — Send text or keystrokes (arrows, Enter, etc.) to a specific pane
 - **Read pane content** — Get the text content of a pane
 
+### Launch Parameters
+
+By default, Claude Code is launched with the following flags:
+
+```
+claude --dangerously-load-development-channels server:claude-peers --dangerously-skip-permissions
+```
+
+- `--dangerously-load-development-channels server:claude-peers` — Enables peer communication between Claude Code instances
+- `--dangerously-skip-permissions` — Skips tool permission prompts so the launched instance can operate autonomously
+
+These flags are defined in `skills/control/SKILL.md`. If you have concerns about the permission model, you can fork this repository and modify the launch command to suit your needs.
+
 ## License
 
 MIT
