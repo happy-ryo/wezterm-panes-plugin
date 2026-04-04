@@ -49,23 +49,39 @@ printf '\r' | wezterm cli send-text --pane-id $PANE_ID --no-paste
 
 ### 2. Handle Dialogs
 
-`skipDangerousModePermissionPrompt: true` is set in settings, so the first dialog is skipped.
+Poll for dialogs and the prompt. Two dialogs may appear depending on settings:
 
-Poll for the "local development" dialog and confirm:
+1. **Permission prompt** — "Yes, I accept" (may be skipped if `skipDangerousModePermissionPrompt: true` is set)
+2. **Local development dialog** — "local development"
 
-```bash
-while ! wezterm cli get-text --pane-id $PANE_ID 2>/dev/null | grep -q "local development"; do
-  sleep 1
-done
-printf '\r' | wezterm cli send-text --pane-id $PANE_ID --no-paste
-```
-
-### 3. Confirm Startup
-
-Wait for the Claude Code prompt:
+Handle both by polling in a loop until the `❯` prompt appears:
 
 ```bash
-while ! wezterm cli get-text --pane-id $PANE_ID 2>/dev/null | grep -q '❯'; do
+for i in $(seq 1 60); do
+  PANE_TEXT=$(wezterm cli get-text --pane-id $PANE_ID 2>/dev/null)
+
+  # Permission prompt: select "Yes, I accept" and confirm
+  if echo "$PANE_TEXT" | grep -q "Yes, I accept"; then
+    printf '\x1bOB' | wezterm cli send-text --pane-id $PANE_ID --no-paste
+    sleep 0.5
+    printf '\r' | wezterm cli send-text --pane-id $PANE_ID --no-paste
+    sleep 2
+    continue
+  fi
+
+  # Local development dialog: confirm with Enter
+  if echo "$PANE_TEXT" | grep -q "local development"; then
+    printf '\r' | wezterm cli send-text --pane-id $PANE_ID --no-paste
+    sleep 2
+    continue
+  fi
+
+  # Check if Claude Code is ready (dialogs are already handled above,
+  # so ❯ here means the input prompt)
+  if echo "$PANE_TEXT" | grep -q '❯'; then
+    break
+  fi
+
   sleep 1
 done
 ```
