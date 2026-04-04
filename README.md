@@ -2,6 +2,11 @@
 
 A Claude Code plugin for managing WezTerm panes and launching Claude Code instances.
 
+## Prerequisites
+
+- [WezTerm](https://wezfurlong.org/wezterm/) installed with `wezterm` available in your PATH
+- [Claude Code](https://claude.ai/code) installed
+
 ## Features
 
 - List, split, and close WezTerm panes
@@ -50,6 +55,15 @@ Add to your `~/.claude/settings.json`:
 ```
 
 Or just ask Claude Code in natural language, e.g. "open a new pane to the right with Claude Code".
+
+### Available Operations
+
+- **List panes** — Show all WezTerm panes with their IDs, sizes, and titles
+- **Split pane** — Create a new pane in any direction (right, left, top, bottom)
+- **Close pane** — Kill a specific pane by ID
+- **Launch Claude Code** — Split a new pane and start Claude Code with automatic dialog handling
+- **Send text/keys** — Send text or keystrokes (arrows, Enter, etc.) to a specific pane
+- **Read pane content** — Get the text content of a pane
 
 ## License
 
