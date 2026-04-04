@@ -10,6 +10,15 @@ A Claude Code plugin for managing WezTerm panes and launching Claude Code instan
 
 ## Installation
 
+### Using CLI commands
+
+```
+/plugin marketplace add happy-ryo/wezterm-panes-plugin
+/plugin install wezterm-panes@wezterm-panes-plugin
+```
+
+### Manual configuration
+
 Add to your `~/.claude/settings.json`:
 
 ```json
