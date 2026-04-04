@@ -1,6 +1,6 @@
 {
   "name": "wezterm-panes",
-  "description": "WezTermのペイン管理とClaude Code起動",
+  "description": "Manage WezTerm panes and launch Claude Code instances",
   "version": "1.0.0",
   "author": {
     "name": "happy-ryo"
