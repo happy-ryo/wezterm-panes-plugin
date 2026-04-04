@@ -8,6 +8,7 @@ A Claude Code plugin (`wezterm-panes`) that manages WezTerm terminal panes and l
 
 ## Architecture
 
+- `.claude-plugin/marketplace.json` — Marketplace manifest enabling `/plugin marketplace add` installation
 - `.claude-plugin/plugin.json` — Plugin manifest (name, version, description)
 - `skills/control/SKILL.md` — The skill definition that Claude Code loads when `/wezterm-panes:control` is invoked. Contains all WezTerm CLI commands for pane management (list, split, close, send-text, get-text) and the multi-step Claude Code launch sequence with dialog handling.
 - `install.cmd` — Windows CMD bootstrap script for installing Claude Code (not part of the plugin itself)

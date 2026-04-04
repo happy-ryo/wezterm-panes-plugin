@@ -1,0 +1,14 @@
+{
+  "name": "wezterm-panes-plugin",
+  "owner": {
+    "name": "happy-ryo"
+  },
+  "plugins": [
+    {
+      "name": "wezterm-panes",
+      "source": "./",
+      "description": "Manage WezTerm panes and launch Claude Code instances",
+      "version": "1.0.0"
+    }
+  ]
+}
