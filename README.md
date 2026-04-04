@@ -14,7 +14,7 @@ A Claude Code plugin for managing WezTerm panes and launching Claude Code instan
 
 ```
 /plugin marketplace add happy-ryo/wezterm-panes-plugin
-/plugin install wezterm-panes@wezterm-panes-plugin
+/plugin install wezterm-panes@happy-ryo
 ```
 
 ### Manual configuration
@@ -24,7 +24,7 @@ Add to your `~/.claude/settings.json`:
 ```json
 {
   "extraKnownMarketplaces": {
-    "wezterm-panes-plugin": {
+    "happy-ryo": {
       "source": {
         "source": "github",
         "repo": "happy-ryo/wezterm-panes-plugin"
@@ -32,9 +32,15 @@ Add to your `~/.claude/settings.json`:
     }
   },
   "enabledPlugins": {
-    "wezterm-panes@wezterm-panes-plugin": true
+    "wezterm-panes@happy-ryo": true
   }
 }
+```
+
+## Uninstallation
+
+```
+/plugin uninstall wezterm-panes@happy-ryo
 ```
 
 ## Usage
