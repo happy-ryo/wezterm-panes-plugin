@@ -1,6 +1,6 @@
 ---
 name: control
-description: Manage WezTerm panes and launch Claude Code instances via wezterm cli. Split, close, list panes, send text/keystrokes, and read pane content. Handles the full Claude Code launch sequence including dialog automation (permission prompt, local development dialog) and polling for readiness. Use this skill whenever the user wants to: split or manage WezTerm panes, launch Claude Code in a new pane, run multiple Claude instances side by side, send commands or keystrokes to another pane, read pane output, or arrange terminal layout with wezterm cli.
+description: "Manage WezTerm panes and launch Claude Code instances via wezterm cli. Split, close, list panes, send text/keystrokes, and read pane content. Handles the full Claude Code launch sequence including dialog automation (permission prompt, local development dialog) and polling for readiness. Use this skill whenever the user wants to: split or manage WezTerm panes, launch Claude Code in a new pane, run multiple Claude instances side by side, send commands or keystrokes to another pane, read pane output, or arrange terminal layout with wezterm cli."
 tools: [Bash]
 ---
 
